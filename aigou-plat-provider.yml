@@ -1,1 +1,32 @@
 
+spring:
+  profiles:
+    active:
+    - dev
+---
+spring:
+  profiles: dev
+  application:
+    name: PLAT_SERVICE
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/ 
+  instance:
+    prefer-ip-address: true
+server:
+  port: 2000
+
+---
+spring:
+  profiles: test
+  application:
+    name: PLAT_SERVICE
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka/  
+  instance:
+    prefer-ip-address: true
+server:
+  port: 2001
